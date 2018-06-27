@@ -30,9 +30,11 @@ day = Date.today - 1
 
 my_profile = twitter.show_my_profile
 
-message = <<EOS
-  #{my_profile[1]}(@#{my_profile[0]})は#{day}に#{github.get_num_commit_repos("#{day}")}つのレポジトリに合計#{github.get_num_commits("#{day}")}回コミットしました。#gittary
-EOS
+if github.get_num_commit_repos("#{day}").zero?
+  message = "#{my_profile[1]}(@#{my_profile[0]})は#{day}のコミットは0でした #gittary"
+else
+  message = "#{my_profile[1]}(@#{my_profile[0]})は#{day}に#{github.get_num_commit_repos("#{day}")}のレポジトリに合計#{github.get_num_commits("#{day}")}回コミットしました。#gittary"
+end
 
 # TODO
 # なにか拾ってないアクティビティがあるっぽい
