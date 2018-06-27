@@ -33,7 +33,7 @@ my_profile = twitter.show_my_profile
 if github.get_num_commit_repos("#{day}").zero?
   message = "#{my_profile[1]}(@#{my_profile[0]})は#{day}のコミットは0でした #gittary"
 else
-  message = "#{my_profile[1]}(@#{my_profile[0]})は#{day}に#{github.get_num_commit_repos("#{day}")}のレポジトリに合計#{github.get_num_commits("#{day}")}回コミットしました。#gittary"
+  message = "#{my_profile[1]}(@#{my_profile[0]})は#{day}に#{github.get_num_commit_repos("#{day}")}個のレポジトリに合計#{github.get_num_commits("#{day}")}回コミットしました。#gittary"
 end
 
 # TODO
