@@ -27,6 +27,7 @@ github = Gittary::GithubClient.new
 twitter = Gittary::TwitterClient.new
 
 day = Date.today - 1
+p Time.now
 
 my_profile = twitter.show_my_profile
 
