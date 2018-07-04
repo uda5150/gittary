@@ -17,7 +17,7 @@ module Gittary
 
       # 日本の日付からUTCの日付開始時間と終了時間の取得
       @start_at = Time.parse(date).getutc
-      @end_at = @start_at + (60*60*24)
+      @end_at = @start_at + (60 * 60 * 24).seconds
 
       # イベントからプッシュしたレポジトリの取得
       repo_list = []
