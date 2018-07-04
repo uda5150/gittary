@@ -32,6 +32,7 @@ module Gittary
       repo_list
     end
 
+    # コミットしたレポジトリ数の取得
     def get_num_commit_repos(date)
 
       repo_list = get_push_events(date)
